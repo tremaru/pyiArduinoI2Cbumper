@@ -19,7 +19,7 @@ cdef extern from "iarduino_I2C_Bumper.h":
         bint setCalibrationRun()
         bint setCalibrationEnd(bint)
         bint setCalibrationManual(unsigned short,unsigned short,unsigned short,unsigned short,unsigned short,unsigned short,unsigned short,unsigned short,unsigned short)
-        bint setCalibrationManual(unsigned short)
+        bint setCalibrationManualOverloaded "setCalibrationManual"(unsigned short)
         unsigned char getCalibrationStage()
         unsigned short getLineDigital(unsigned char)
         unsigned short getLineAnalog(unsigned char)

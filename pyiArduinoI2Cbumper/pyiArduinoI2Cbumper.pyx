@@ -132,6 +132,60 @@ cdef class pyiArduinoI2Cbumper:
     def getPullI2C(self):
         return self.c_module.getPullI2C()
 
-    def setPullI2C(self):
-        return self.c_module.setPullI2C()
+    def setPullI2C(self, flag=None):
+        if flag is not None:
+            return self.c_module.setPullI2C(flag)
+        else:
+            return self.c_module.setPullI2C(True)
 
+    def setLamp(self, state):
+        self.c_module.setLamp(state)
+
+    def setTurnSignal(self, mode):
+        self.c_module.setTurnSignal(mode)
+
+    def setTurnPeriod(self, period):
+        self.c_module.setTurnPeriod(period)
+
+    def settingsTurnAuto(self, start, stop, flag=None):
+        if flag is not None:
+            self.c_module.settingsTurnAuto(start, stop, flag)
+        else:
+            self.c_module.settingsTurnAuto(start, stop, False)
+
+    def setCalibrationRun(self):
+        self.c_module.setCalibrationRun()
+
+    def setCalibrationEnd(self, flag=None):
+        if flag is not None:
+            self.c_module.setCalibrationEnd(flag)
+        else:
+            self.c_module.setCalibrationEnd(False)
+
+# overload funcs f-ery. TODO
+    def setCalibrationManual(self, adc_1, adc_2, adc_3, adc_4, adc_5, adc_6, adc_7, adc_8, adc_9):
+        self.c_module.setCalibrationManual(adc_1, adc_2, adc_3, adc_4, adc_5, adc_6, adc_7, adc_8, adc_9)
+
+    def setCalibrationManualOverloaded(self, i):
+        self.c_module.setCalibrationManualOverloaded(i)
+
+    def getCalibrationStage(self):
+        self.c_module.getCalibrationStage()
+
+    def getLineDigital(self, num):
+        self.c_module.getLineDigital(num)
+
+    def getLineAnalog(self, num):
+        self.c_module.getLineAnalog(num)
+
+    def getErrPID(self):
+        self.c_module.getErrPID()
+
+    def getLineSum(self):
+        self.c_module.getLineSum()
+
+    def getLineType(self):
+        self.c_module.getLineType()
+
+    def setLineType(self, line_type):
+        self.c_module.setLineType(line_type)
