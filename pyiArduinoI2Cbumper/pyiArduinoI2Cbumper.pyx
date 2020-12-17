@@ -139,53 +139,52 @@ cdef class pyiArduinoI2Cbumper:
             return self.c_module.setPullI2C(True)
 
     def setLamp(self, state):
-        self.c_module.setLamp(state)
+        return self.c_module.setLamp(state)
 
     def setTurnSignal(self, mode):
-        self.c_module.setTurnSignal(mode)
+        return self.c_module.setTurnSignal(mode)
 
     def setTurnPeriod(self, period):
-        self.c_module.setTurnPeriod(period)
+        return self.c_module.setTurnPeriod(period)
 
     def settingsTurnAuto(self, start, stop, flag=None):
         if flag is not None:
-            self.c_module.settingsTurnAuto(start, stop, flag)
+            return self.c_module.settingsTurnAuto(start, stop, flag)
         else:
-            self.c_module.settingsTurnAuto(start, stop, False)
+            return self.c_module.settingsTurnAuto(start, stop, False)
 
     def setCalibrationRun(self):
-        self.c_module.setCalibrationRun()
+        return self.c_module.setCalibrationRun()
 
     def setCalibrationEnd(self, flag=None):
         if flag is not None:
-            self.c_module.setCalibrationEnd(flag)
+            return self.c_module.setCalibrationEnd(flag)
         else:
-            self.c_module.setCalibrationEnd(False)
+            return self.c_module.setCalibrationEnd(False)
 
-# overload funcs f-ery. TODO
     def setCalibrationManual(self, adc_1, adc_2, adc_3, adc_4, adc_5, adc_6, adc_7, adc_8, adc_9):
-        self.c_module.setCalibrationManual(adc_1, adc_2, adc_3, adc_4, adc_5, adc_6, adc_7, adc_8, adc_9)
+        return self.c_module.setCalibrationManual(adc_1, adc_2, adc_3, adc_4, adc_5, adc_6, adc_7, adc_8, adc_9)
 
     def setCalibrationManualOverloaded(self, i):
-        self.c_module.setCalibrationManualOverloaded(i)
+        return self.c_module.setCalibrationManualOverloaded(i)
 
     def getCalibrationStage(self):
-        self.c_module.getCalibrationStage()
+        return self.c_module.getCalibrationStage()
 
     def getLineDigital(self, num):
-        self.c_module.getLineDigital(num)
+        return self.c_module.getLineDigital(num)
 
     def getLineAnalog(self, num):
-        self.c_module.getLineAnalog(num)
+        return self.c_module.getLineAnalog(num)
 
     def getErrPID(self):
-        self.c_module.getErrPID()
+        return self.c_module.getErrPID()
 
     def getLineSum(self):
-        self.c_module.getLineSum()
+        return self.c_module.getLineSum()
 
     def getLineType(self):
-        self.c_module.getLineType()
+        return self.c_module.getLineType()
 
     def setLineType(self, line_type):
-        self.c_module.setLineType(line_type)
+        return self.c_module.setLineType(line_type)

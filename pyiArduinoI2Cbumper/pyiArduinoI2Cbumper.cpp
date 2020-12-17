@@ -1110,6 +1110,9 @@ static void __Pyx_CppExn2PyErr() {
 /* CIntToPy.proto */
 static CYTHON_INLINE PyObject* __Pyx_PyInt_From_unsigned_char(unsigned char value);
 
+/* CIntToPy.proto */
+static CYTHON_INLINE PyObject* __Pyx_PyInt_From_unsigned_short(unsigned short value);
+
 /* CIntFromPy.proto */
 static CYTHON_INLINE unsigned char __Pyx_PyInt_As_unsigned_char(PyObject *);
 
@@ -2194,7 +2197,7 @@ static PyObject *__pyx_pf_19pyiArduinoI2Cbumper_19pyiArduinoI2Cbumper_19pyiArdui
  *             return self.c_module.setPullI2C(True)
  * 
  *     def setLamp(self, state):             # <<<<<<<<<<<<<<
- *         self.c_module.setLamp(state)
+ *         return self.c_module.setLamp(state)
  * 
  */
 
@@ -2215,30 +2218,35 @@ static PyObject *__pyx_pf_19pyiArduinoI2Cbumper_19pyiArduinoI2Cbumper_19pyiArdui
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   int __pyx_t_1;
+  PyObject *__pyx_t_2 = NULL;
   __Pyx_RefNannySetupContext("setLamp", 0);
 
   /* "pyiArduinoI2Cbumper/pyiArduinoI2Cbumper.pyx":142
  * 
  *     def setLamp(self, state):
- *         self.c_module.setLamp(state)             # <<<<<<<<<<<<<<
+ *         return self.c_module.setLamp(state)             # <<<<<<<<<<<<<<
  * 
  *     def setTurnSignal(self, mode):
  */
+  __Pyx_XDECREF(__pyx_r);
   __pyx_t_1 = __Pyx_PyObject_IsTrue(__pyx_v_state); if (unlikely((__pyx_t_1 == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 142, __pyx_L1_error)
-  (void)(__pyx_v_self->c_module.setLamp(__pyx_t_1));
+  __pyx_t_2 = __Pyx_PyBool_FromLong(__pyx_v_self->c_module.setLamp(__pyx_t_1)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 142, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_2);
+  __pyx_r = __pyx_t_2;
+  __pyx_t_2 = 0;
+  goto __pyx_L0;
 
   /* "pyiArduinoI2Cbumper/pyiArduinoI2Cbumper.pyx":141
  *             return self.c_module.setPullI2C(True)
  * 
  *     def setLamp(self, state):             # <<<<<<<<<<<<<<
- *         self.c_module.setLamp(state)
+ *         return self.c_module.setLamp(state)
  * 
  */
 
   /* function exit code */
-  __pyx_r = Py_None; __Pyx_INCREF(Py_None);
-  goto __pyx_L0;
   __pyx_L1_error:;
+  __Pyx_XDECREF(__pyx_t_2);
   __Pyx_AddTraceback("pyiArduinoI2Cbumper.pyiArduinoI2Cbumper.pyiArduinoI2Cbumper.setLamp", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __pyx_L0:;
@@ -2248,10 +2256,10 @@ static PyObject *__pyx_pf_19pyiArduinoI2Cbumper_19pyiArduinoI2Cbumper_19pyiArdui
 }
 
 /* "pyiArduinoI2Cbumper/pyiArduinoI2Cbumper.pyx":144
- *         self.c_module.setLamp(state)
+ *         return self.c_module.setLamp(state)
  * 
  *     def setTurnSignal(self, mode):             # <<<<<<<<<<<<<<
- *         self.c_module.setTurnSignal(mode)
+ *         return self.c_module.setTurnSignal(mode)
  * 
  */
 
@@ -2272,30 +2280,35 @@ static PyObject *__pyx_pf_19pyiArduinoI2Cbumper_19pyiArduinoI2Cbumper_19pyiArdui
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   unsigned char __pyx_t_1;
+  PyObject *__pyx_t_2 = NULL;
   __Pyx_RefNannySetupContext("setTurnSignal", 0);
 
   /* "pyiArduinoI2Cbumper/pyiArduinoI2Cbumper.pyx":145
  * 
  *     def setTurnSignal(self, mode):
- *         self.c_module.setTurnSignal(mode)             # <<<<<<<<<<<<<<
+ *         return self.c_module.setTurnSignal(mode)             # <<<<<<<<<<<<<<
  * 
  *     def setTurnPeriod(self, period):
  */
+  __Pyx_XDECREF(__pyx_r);
   __pyx_t_1 = __Pyx_PyInt_As_unsigned_char(__pyx_v_mode); if (unlikely((__pyx_t_1 == (unsigned char)-1) && PyErr_Occurred())) __PYX_ERR(0, 145, __pyx_L1_error)
-  (void)(__pyx_v_self->c_module.setTurnSignal(__pyx_t_1));
+  __pyx_t_2 = __Pyx_PyBool_FromLong(__pyx_v_self->c_module.setTurnSignal(__pyx_t_1)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 145, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_2);
+  __pyx_r = __pyx_t_2;
+  __pyx_t_2 = 0;
+  goto __pyx_L0;
 
   /* "pyiArduinoI2Cbumper/pyiArduinoI2Cbumper.pyx":144
- *         self.c_module.setLamp(state)
+ *         return self.c_module.setLamp(state)
  * 
  *     def setTurnSignal(self, mode):             # <<<<<<<<<<<<<<
- *         self.c_module.setTurnSignal(mode)
+ *         return self.c_module.setTurnSignal(mode)
  * 
  */
 
   /* function exit code */
-  __pyx_r = Py_None; __Pyx_INCREF(Py_None);
-  goto __pyx_L0;
   __pyx_L1_error:;
+  __Pyx_XDECREF(__pyx_t_2);
   __Pyx_AddTraceback("pyiArduinoI2Cbumper.pyiArduinoI2Cbumper.pyiArduinoI2Cbumper.setTurnSignal", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __pyx_L0:;
@@ -2305,10 +2318,10 @@ static PyObject *__pyx_pf_19pyiArduinoI2Cbumper_19pyiArduinoI2Cbumper_19pyiArdui
 }
 
 /* "pyiArduinoI2Cbumper/pyiArduinoI2Cbumper.pyx":147
- *         self.c_module.setTurnSignal(mode)
+ *         return self.c_module.setTurnSignal(mode)
  * 
  *     def setTurnPeriod(self, period):             # <<<<<<<<<<<<<<
- *         self.c_module.setTurnPeriod(period)
+ *         return self.c_module.setTurnPeriod(period)
  * 
  */
 
@@ -2329,30 +2342,35 @@ static PyObject *__pyx_pf_19pyiArduinoI2Cbumper_19pyiArduinoI2Cbumper_19pyiArdui
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   unsigned char __pyx_t_1;
+  PyObject *__pyx_t_2 = NULL;
   __Pyx_RefNannySetupContext("setTurnPeriod", 0);
 
   /* "pyiArduinoI2Cbumper/pyiArduinoI2Cbumper.pyx":148
  * 
  *     def setTurnPeriod(self, period):
- *         self.c_module.setTurnPeriod(period)             # <<<<<<<<<<<<<<
+ *         return self.c_module.setTurnPeriod(period)             # <<<<<<<<<<<<<<
  * 
  *     def settingsTurnAuto(self, start, stop, flag=None):
  */
+  __Pyx_XDECREF(__pyx_r);
   __pyx_t_1 = __Pyx_PyInt_As_unsigned_char(__pyx_v_period); if (unlikely((__pyx_t_1 == (unsigned char)-1) && PyErr_Occurred())) __PYX_ERR(0, 148, __pyx_L1_error)
-  (void)(__pyx_v_self->c_module.setTurnPeriod(__pyx_t_1));
+  __pyx_t_2 = __Pyx_PyBool_FromLong(__pyx_v_self->c_module.setTurnPeriod(__pyx_t_1)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 148, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_2);
+  __pyx_r = __pyx_t_2;
+  __pyx_t_2 = 0;
+  goto __pyx_L0;
 
   /* "pyiArduinoI2Cbumper/pyiArduinoI2Cbumper.pyx":147
- *         self.c_module.setTurnSignal(mode)
+ *         return self.c_module.setTurnSignal(mode)
  * 
  *     def setTurnPeriod(self, period):             # <<<<<<<<<<<<<<
- *         self.c_module.setTurnPeriod(period)
+ *         return self.c_module.setTurnPeriod(period)
  * 
  */
 
   /* function exit code */
-  __pyx_r = Py_None; __Pyx_INCREF(Py_None);
-  goto __pyx_L0;
   __pyx_L1_error:;
+  __Pyx_XDECREF(__pyx_t_2);
   __Pyx_AddTraceback("pyiArduinoI2Cbumper.pyiArduinoI2Cbumper.pyiArduinoI2Cbumper.setTurnPeriod", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __pyx_L0:;
@@ -2362,11 +2380,11 @@ static PyObject *__pyx_pf_19pyiArduinoI2Cbumper_19pyiArduinoI2Cbumper_19pyiArdui
 }
 
 /* "pyiArduinoI2Cbumper/pyiArduinoI2Cbumper.pyx":150
- *         self.c_module.setTurnPeriod(period)
+ *         return self.c_module.setTurnPeriod(period)
  * 
  *     def settingsTurnAuto(self, start, stop, flag=None):             # <<<<<<<<<<<<<<
  *         if flag is not None:
- *             self.c_module.settingsTurnAuto(start, stop, flag)
+ *             return self.c_module.settingsTurnAuto(start, stop, flag)
  */
 
 /* Python wrapper */
@@ -2452,13 +2470,14 @@ static PyObject *__pyx_pf_19pyiArduinoI2Cbumper_19pyiArduinoI2Cbumper_19pyiArdui
   int __pyx_t_2;
   unsigned char __pyx_t_3;
   unsigned char __pyx_t_4;
+  PyObject *__pyx_t_5 = NULL;
   __Pyx_RefNannySetupContext("settingsTurnAuto", 0);
 
   /* "pyiArduinoI2Cbumper/pyiArduinoI2Cbumper.pyx":151
  * 
  *     def settingsTurnAuto(self, start, stop, flag=None):
  *         if flag is not None:             # <<<<<<<<<<<<<<
- *             self.c_module.settingsTurnAuto(start, stop, flag)
+ *             return self.c_module.settingsTurnAuto(start, stop, flag)
  *         else:
  */
   __pyx_t_1 = (__pyx_v_flag != Py_None);
@@ -2468,51 +2487,58 @@ static PyObject *__pyx_pf_19pyiArduinoI2Cbumper_19pyiArduinoI2Cbumper_19pyiArdui
     /* "pyiArduinoI2Cbumper/pyiArduinoI2Cbumper.pyx":152
  *     def settingsTurnAuto(self, start, stop, flag=None):
  *         if flag is not None:
- *             self.c_module.settingsTurnAuto(start, stop, flag)             # <<<<<<<<<<<<<<
+ *             return self.c_module.settingsTurnAuto(start, stop, flag)             # <<<<<<<<<<<<<<
  *         else:
- *             self.c_module.settingsTurnAuto(start, stop, False)
+ *             return self.c_module.settingsTurnAuto(start, stop, False)
  */
+    __Pyx_XDECREF(__pyx_r);
     __pyx_t_3 = __Pyx_PyInt_As_unsigned_char(__pyx_v_start); if (unlikely((__pyx_t_3 == (unsigned char)-1) && PyErr_Occurred())) __PYX_ERR(0, 152, __pyx_L1_error)
     __pyx_t_4 = __Pyx_PyInt_As_unsigned_char(__pyx_v_stop); if (unlikely((__pyx_t_4 == (unsigned char)-1) && PyErr_Occurred())) __PYX_ERR(0, 152, __pyx_L1_error)
     __pyx_t_2 = __Pyx_PyObject_IsTrue(__pyx_v_flag); if (unlikely((__pyx_t_2 == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 152, __pyx_L1_error)
-    (void)(__pyx_v_self->c_module.settingsTurnAuto(__pyx_t_3, __pyx_t_4, __pyx_t_2));
+    __pyx_t_5 = __Pyx_PyBool_FromLong(__pyx_v_self->c_module.settingsTurnAuto(__pyx_t_3, __pyx_t_4, __pyx_t_2)); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 152, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_5);
+    __pyx_r = __pyx_t_5;
+    __pyx_t_5 = 0;
+    goto __pyx_L0;
 
     /* "pyiArduinoI2Cbumper/pyiArduinoI2Cbumper.pyx":151
  * 
  *     def settingsTurnAuto(self, start, stop, flag=None):
  *         if flag is not None:             # <<<<<<<<<<<<<<
- *             self.c_module.settingsTurnAuto(start, stop, flag)
+ *             return self.c_module.settingsTurnAuto(start, stop, flag)
  *         else:
  */
-    goto __pyx_L3;
   }
 
   /* "pyiArduinoI2Cbumper/pyiArduinoI2Cbumper.pyx":154
- *             self.c_module.settingsTurnAuto(start, stop, flag)
+ *             return self.c_module.settingsTurnAuto(start, stop, flag)
  *         else:
- *             self.c_module.settingsTurnAuto(start, stop, False)             # <<<<<<<<<<<<<<
+ *             return self.c_module.settingsTurnAuto(start, stop, False)             # <<<<<<<<<<<<<<
  * 
  *     def setCalibrationRun(self):
  */
   /*else*/ {
+    __Pyx_XDECREF(__pyx_r);
     __pyx_t_4 = __Pyx_PyInt_As_unsigned_char(__pyx_v_start); if (unlikely((__pyx_t_4 == (unsigned char)-1) && PyErr_Occurred())) __PYX_ERR(0, 154, __pyx_L1_error)
     __pyx_t_3 = __Pyx_PyInt_As_unsigned_char(__pyx_v_stop); if (unlikely((__pyx_t_3 == (unsigned char)-1) && PyErr_Occurred())) __PYX_ERR(0, 154, __pyx_L1_error)
-    (void)(__pyx_v_self->c_module.settingsTurnAuto(__pyx_t_4, __pyx_t_3, 0));
+    __pyx_t_5 = __Pyx_PyBool_FromLong(__pyx_v_self->c_module.settingsTurnAuto(__pyx_t_4, __pyx_t_3, 0)); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 154, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_5);
+    __pyx_r = __pyx_t_5;
+    __pyx_t_5 = 0;
+    goto __pyx_L0;
   }
-  __pyx_L3:;
 
   /* "pyiArduinoI2Cbumper/pyiArduinoI2Cbumper.pyx":150
- *         self.c_module.setTurnPeriod(period)
+ *         return self.c_module.setTurnPeriod(period)
  * 
  *     def settingsTurnAuto(self, start, stop, flag=None):             # <<<<<<<<<<<<<<
  *         if flag is not None:
- *             self.c_module.settingsTurnAuto(start, stop, flag)
+ *             return self.c_module.settingsTurnAuto(start, stop, flag)
  */
 
   /* function exit code */
-  __pyx_r = Py_None; __Pyx_INCREF(Py_None);
-  goto __pyx_L0;
   __pyx_L1_error:;
+  __Pyx_XDECREF(__pyx_t_5);
   __Pyx_AddTraceback("pyiArduinoI2Cbumper.pyiArduinoI2Cbumper.pyiArduinoI2Cbumper.settingsTurnAuto", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __pyx_L0:;
@@ -2522,10 +2548,10 @@ static PyObject *__pyx_pf_19pyiArduinoI2Cbumper_19pyiArduinoI2Cbumper_19pyiArdui
 }
 
 /* "pyiArduinoI2Cbumper/pyiArduinoI2Cbumper.pyx":156
- *             self.c_module.settingsTurnAuto(start, stop, False)
+ *             return self.c_module.settingsTurnAuto(start, stop, False)
  * 
  *     def setCalibrationRun(self):             # <<<<<<<<<<<<<<
- *         self.c_module.setCalibrationRun()
+ *         return self.c_module.setCalibrationRun()
  * 
  */
 
@@ -2545,38 +2571,48 @@ static PyObject *__pyx_pw_19pyiArduinoI2Cbumper_19pyiArduinoI2Cbumper_19pyiArdui
 static PyObject *__pyx_pf_19pyiArduinoI2Cbumper_19pyiArduinoI2Cbumper_19pyiArduinoI2Cbumper_24setCalibrationRun(struct __pyx_obj_19pyiArduinoI2Cbumper_19pyiArduinoI2Cbumper_pyiArduinoI2Cbumper *__pyx_v_self) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
+  PyObject *__pyx_t_1 = NULL;
   __Pyx_RefNannySetupContext("setCalibrationRun", 0);
 
   /* "pyiArduinoI2Cbumper/pyiArduinoI2Cbumper.pyx":157
  * 
  *     def setCalibrationRun(self):
- *         self.c_module.setCalibrationRun()             # <<<<<<<<<<<<<<
+ *         return self.c_module.setCalibrationRun()             # <<<<<<<<<<<<<<
  * 
  *     def setCalibrationEnd(self, flag=None):
  */
-  (void)(__pyx_v_self->c_module.setCalibrationRun());
+  __Pyx_XDECREF(__pyx_r);
+  __pyx_t_1 = __Pyx_PyBool_FromLong(__pyx_v_self->c_module.setCalibrationRun()); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 157, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_1);
+  __pyx_r = __pyx_t_1;
+  __pyx_t_1 = 0;
+  goto __pyx_L0;
 
   /* "pyiArduinoI2Cbumper/pyiArduinoI2Cbumper.pyx":156
- *             self.c_module.settingsTurnAuto(start, stop, False)
+ *             return self.c_module.settingsTurnAuto(start, stop, False)
  * 
  *     def setCalibrationRun(self):             # <<<<<<<<<<<<<<
- *         self.c_module.setCalibrationRun()
+ *         return self.c_module.setCalibrationRun()
  * 
  */
 
   /* function exit code */
-  __pyx_r = Py_None; __Pyx_INCREF(Py_None);
+  __pyx_L1_error:;
+  __Pyx_XDECREF(__pyx_t_1);
+  __Pyx_AddTraceback("pyiArduinoI2Cbumper.pyiArduinoI2Cbumper.pyiArduinoI2Cbumper.setCalibrationRun", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __pyx_r = NULL;
+  __pyx_L0:;
   __Pyx_XGIVEREF(__pyx_r);
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
 /* "pyiArduinoI2Cbumper/pyiArduinoI2Cbumper.pyx":159
- *         self.c_module.setCalibrationRun()
+ *         return self.c_module.setCalibrationRun()
  * 
  *     def setCalibrationEnd(self, flag=None):             # <<<<<<<<<<<<<<
  *         if flag is not None:
- *             self.c_module.setCalibrationEnd(flag)
+ *             return self.c_module.setCalibrationEnd(flag)
  */
 
 /* Python wrapper */
@@ -2640,13 +2676,14 @@ static PyObject *__pyx_pf_19pyiArduinoI2Cbumper_19pyiArduinoI2Cbumper_19pyiArdui
   __Pyx_RefNannyDeclarations
   int __pyx_t_1;
   int __pyx_t_2;
+  PyObject *__pyx_t_3 = NULL;
   __Pyx_RefNannySetupContext("setCalibrationEnd", 0);
 
   /* "pyiArduinoI2Cbumper/pyiArduinoI2Cbumper.pyx":160
  * 
  *     def setCalibrationEnd(self, flag=None):
  *         if flag is not None:             # <<<<<<<<<<<<<<
- *             self.c_module.setCalibrationEnd(flag)
+ *             return self.c_module.setCalibrationEnd(flag)
  *         else:
  */
   __pyx_t_1 = (__pyx_v_flag != Py_None);
@@ -2656,47 +2693,54 @@ static PyObject *__pyx_pf_19pyiArduinoI2Cbumper_19pyiArduinoI2Cbumper_19pyiArdui
     /* "pyiArduinoI2Cbumper/pyiArduinoI2Cbumper.pyx":161
  *     def setCalibrationEnd(self, flag=None):
  *         if flag is not None:
- *             self.c_module.setCalibrationEnd(flag)             # <<<<<<<<<<<<<<
+ *             return self.c_module.setCalibrationEnd(flag)             # <<<<<<<<<<<<<<
  *         else:
- *             self.c_module.setCalibrationEnd(False)
+ *             return self.c_module.setCalibrationEnd(False)
  */
+    __Pyx_XDECREF(__pyx_r);
     __pyx_t_2 = __Pyx_PyObject_IsTrue(__pyx_v_flag); if (unlikely((__pyx_t_2 == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 161, __pyx_L1_error)
-    (void)(__pyx_v_self->c_module.setCalibrationEnd(__pyx_t_2));
+    __pyx_t_3 = __Pyx_PyBool_FromLong(__pyx_v_self->c_module.setCalibrationEnd(__pyx_t_2)); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 161, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_3);
+    __pyx_r = __pyx_t_3;
+    __pyx_t_3 = 0;
+    goto __pyx_L0;
 
     /* "pyiArduinoI2Cbumper/pyiArduinoI2Cbumper.pyx":160
  * 
  *     def setCalibrationEnd(self, flag=None):
  *         if flag is not None:             # <<<<<<<<<<<<<<
- *             self.c_module.setCalibrationEnd(flag)
+ *             return self.c_module.setCalibrationEnd(flag)
  *         else:
  */
-    goto __pyx_L3;
   }
 
   /* "pyiArduinoI2Cbumper/pyiArduinoI2Cbumper.pyx":163
- *             self.c_module.setCalibrationEnd(flag)
+ *             return self.c_module.setCalibrationEnd(flag)
  *         else:
- *             self.c_module.setCalibrationEnd(False)             # <<<<<<<<<<<<<<
+ *             return self.c_module.setCalibrationEnd(False)             # <<<<<<<<<<<<<<
  * 
  * # overload funcs f-ery. TODO
  */
   /*else*/ {
-    (void)(__pyx_v_self->c_module.setCalibrationEnd(0));
+    __Pyx_XDECREF(__pyx_r);
+    __pyx_t_3 = __Pyx_PyBool_FromLong(__pyx_v_self->c_module.setCalibrationEnd(0)); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 163, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_3);
+    __pyx_r = __pyx_t_3;
+    __pyx_t_3 = 0;
+    goto __pyx_L0;
   }
-  __pyx_L3:;
 
   /* "pyiArduinoI2Cbumper/pyiArduinoI2Cbumper.pyx":159
- *         self.c_module.setCalibrationRun()
+ *         return self.c_module.setCalibrationRun()
  * 
  *     def setCalibrationEnd(self, flag=None):             # <<<<<<<<<<<<<<
  *         if flag is not None:
- *             self.c_module.setCalibrationEnd(flag)
+ *             return self.c_module.setCalibrationEnd(flag)
  */
 
   /* function exit code */
-  __pyx_r = Py_None; __Pyx_INCREF(Py_None);
-  goto __pyx_L0;
   __pyx_L1_error:;
+  __Pyx_XDECREF(__pyx_t_3);
   __Pyx_AddTraceback("pyiArduinoI2Cbumper.pyiArduinoI2Cbumper.pyiArduinoI2Cbumper.setCalibrationEnd", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __pyx_L0:;
@@ -2709,7 +2753,7 @@ static PyObject *__pyx_pf_19pyiArduinoI2Cbumper_19pyiArduinoI2Cbumper_19pyiArdui
  * 
  * # overload funcs f-ery. TODO
  *     def setCalibrationManual(self, adc_1, adc_2, adc_3, adc_4, adc_5, adc_6, adc_7, adc_8, adc_9):             # <<<<<<<<<<<<<<
- *         self.c_module.setCalibrationManual(adc_1, adc_2, adc_3, adc_4, adc_5, adc_6, adc_7, adc_8, adc_9)
+ *         return self.c_module.setCalibrationManual(adc_1, adc_2, adc_3, adc_4, adc_5, adc_6, adc_7, adc_8, adc_9)
  * 
  */
 
@@ -2863,15 +2907,17 @@ static PyObject *__pyx_pf_19pyiArduinoI2Cbumper_19pyiArduinoI2Cbumper_19pyiArdui
   unsigned short __pyx_t_7;
   unsigned short __pyx_t_8;
   unsigned short __pyx_t_9;
+  PyObject *__pyx_t_10 = NULL;
   __Pyx_RefNannySetupContext("setCalibrationManual", 0);
 
   /* "pyiArduinoI2Cbumper/pyiArduinoI2Cbumper.pyx":167
  * # overload funcs f-ery. TODO
  *     def setCalibrationManual(self, adc_1, adc_2, adc_3, adc_4, adc_5, adc_6, adc_7, adc_8, adc_9):
- *         self.c_module.setCalibrationManual(adc_1, adc_2, adc_3, adc_4, adc_5, adc_6, adc_7, adc_8, adc_9)             # <<<<<<<<<<<<<<
+ *         return self.c_module.setCalibrationManual(adc_1, adc_2, adc_3, adc_4, adc_5, adc_6, adc_7, adc_8, adc_9)             # <<<<<<<<<<<<<<
  * 
  *     def setCalibrationManualOverloaded(self, i):
  */
+  __Pyx_XDECREF(__pyx_r);
   __pyx_t_1 = __Pyx_PyInt_As_unsigned_short(__pyx_v_adc_1); if (unlikely((__pyx_t_1 == (unsigned short)-1) && PyErr_Occurred())) __PYX_ERR(0, 167, __pyx_L1_error)
   __pyx_t_2 = __Pyx_PyInt_As_unsigned_short(__pyx_v_adc_2); if (unlikely((__pyx_t_2 == (unsigned short)-1) && PyErr_Occurred())) __PYX_ERR(0, 167, __pyx_L1_error)
   __pyx_t_3 = __Pyx_PyInt_As_unsigned_short(__pyx_v_adc_3); if (unlikely((__pyx_t_3 == (unsigned short)-1) && PyErr_Occurred())) __PYX_ERR(0, 167, __pyx_L1_error)
@@ -2881,20 +2927,23 @@ static PyObject *__pyx_pf_19pyiArduinoI2Cbumper_19pyiArduinoI2Cbumper_19pyiArdui
   __pyx_t_7 = __Pyx_PyInt_As_unsigned_short(__pyx_v_adc_7); if (unlikely((__pyx_t_7 == (unsigned short)-1) && PyErr_Occurred())) __PYX_ERR(0, 167, __pyx_L1_error)
   __pyx_t_8 = __Pyx_PyInt_As_unsigned_short(__pyx_v_adc_8); if (unlikely((__pyx_t_8 == (unsigned short)-1) && PyErr_Occurred())) __PYX_ERR(0, 167, __pyx_L1_error)
   __pyx_t_9 = __Pyx_PyInt_As_unsigned_short(__pyx_v_adc_9); if (unlikely((__pyx_t_9 == (unsigned short)-1) && PyErr_Occurred())) __PYX_ERR(0, 167, __pyx_L1_error)
-  (void)(__pyx_v_self->c_module.setCalibrationManual(__pyx_t_1, __pyx_t_2, __pyx_t_3, __pyx_t_4, __pyx_t_5, __pyx_t_6, __pyx_t_7, __pyx_t_8, __pyx_t_9));
+  __pyx_t_10 = __Pyx_PyBool_FromLong(__pyx_v_self->c_module.setCalibrationManual(__pyx_t_1, __pyx_t_2, __pyx_t_3, __pyx_t_4, __pyx_t_5, __pyx_t_6, __pyx_t_7, __pyx_t_8, __pyx_t_9)); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 167, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_10);
+  __pyx_r = __pyx_t_10;
+  __pyx_t_10 = 0;
+  goto __pyx_L0;
 
   /* "pyiArduinoI2Cbumper/pyiArduinoI2Cbumper.pyx":166
  * 
  * # overload funcs f-ery. TODO
  *     def setCalibrationManual(self, adc_1, adc_2, adc_3, adc_4, adc_5, adc_6, adc_7, adc_8, adc_9):             # <<<<<<<<<<<<<<
- *         self.c_module.setCalibrationManual(adc_1, adc_2, adc_3, adc_4, adc_5, adc_6, adc_7, adc_8, adc_9)
+ *         return self.c_module.setCalibrationManual(adc_1, adc_2, adc_3, adc_4, adc_5, adc_6, adc_7, adc_8, adc_9)
  * 
  */
 
   /* function exit code */
-  __pyx_r = Py_None; __Pyx_INCREF(Py_None);
-  goto __pyx_L0;
   __pyx_L1_error:;
+  __Pyx_XDECREF(__pyx_t_10);
   __Pyx_AddTraceback("pyiArduinoI2Cbumper.pyiArduinoI2Cbumper.pyiArduinoI2Cbumper.setCalibrationManual", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __pyx_L0:;
@@ -2904,10 +2953,10 @@ static PyObject *__pyx_pf_19pyiArduinoI2Cbumper_19pyiArduinoI2Cbumper_19pyiArdui
 }
 
 /* "pyiArduinoI2Cbumper/pyiArduinoI2Cbumper.pyx":169
- *         self.c_module.setCalibrationManual(adc_1, adc_2, adc_3, adc_4, adc_5, adc_6, adc_7, adc_8, adc_9)
+ *         return self.c_module.setCalibrationManual(adc_1, adc_2, adc_3, adc_4, adc_5, adc_6, adc_7, adc_8, adc_9)
  * 
  *     def setCalibrationManualOverloaded(self, i):             # <<<<<<<<<<<<<<
- *         self.c_module.setCalibrationManualOverloaded(i)
+ *         return self.c_module.setCalibrationManualOverloaded(i)
  * 
  */
 
@@ -2928,30 +2977,35 @@ static PyObject *__pyx_pf_19pyiArduinoI2Cbumper_19pyiArduinoI2Cbumper_19pyiArdui
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   unsigned short __pyx_t_1;
+  PyObject *__pyx_t_2 = NULL;
   __Pyx_RefNannySetupContext("setCalibrationManualOverloaded", 0);
 
   /* "pyiArduinoI2Cbumper/pyiArduinoI2Cbumper.pyx":170
  * 
  *     def setCalibrationManualOverloaded(self, i):
- *         self.c_module.setCalibrationManualOverloaded(i)             # <<<<<<<<<<<<<<
+ *         return self.c_module.setCalibrationManualOverloaded(i)             # <<<<<<<<<<<<<<
  * 
  *     def getCalibrationStage(self):
  */
+  __Pyx_XDECREF(__pyx_r);
   __pyx_t_1 = __Pyx_PyInt_As_unsigned_short(__pyx_v_i); if (unlikely((__pyx_t_1 == (unsigned short)-1) && PyErr_Occurred())) __PYX_ERR(0, 170, __pyx_L1_error)
-  (void)(__pyx_v_self->c_module.setCalibrationManual(__pyx_t_1));
+  __pyx_t_2 = __Pyx_PyBool_FromLong(__pyx_v_self->c_module.setCalibrationManual(__pyx_t_1)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 170, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_2);
+  __pyx_r = __pyx_t_2;
+  __pyx_t_2 = 0;
+  goto __pyx_L0;
 
   /* "pyiArduinoI2Cbumper/pyiArduinoI2Cbumper.pyx":169
- *         self.c_module.setCalibrationManual(adc_1, adc_2, adc_3, adc_4, adc_5, adc_6, adc_7, adc_8, adc_9)
+ *         return self.c_module.setCalibrationManual(adc_1, adc_2, adc_3, adc_4, adc_5, adc_6, adc_7, adc_8, adc_9)
  * 
  *     def setCalibrationManualOverloaded(self, i):             # <<<<<<<<<<<<<<
- *         self.c_module.setCalibrationManualOverloaded(i)
+ *         return self.c_module.setCalibrationManualOverloaded(i)
  * 
  */
 
   /* function exit code */
-  __pyx_r = Py_None; __Pyx_INCREF(Py_None);
-  goto __pyx_L0;
   __pyx_L1_error:;
+  __Pyx_XDECREF(__pyx_t_2);
   __Pyx_AddTraceback("pyiArduinoI2Cbumper.pyiArduinoI2Cbumper.pyiArduinoI2Cbumper.setCalibrationManualOverloaded", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __pyx_L0:;
@@ -2961,10 +3015,10 @@ static PyObject *__pyx_pf_19pyiArduinoI2Cbumper_19pyiArduinoI2Cbumper_19pyiArdui
 }
 
 /* "pyiArduinoI2Cbumper/pyiArduinoI2Cbumper.pyx":172
- *         self.c_module.setCalibrationManualOverloaded(i)
+ *         return self.c_module.setCalibrationManualOverloaded(i)
  * 
  *     def getCalibrationStage(self):             # <<<<<<<<<<<<<<
- *         self.c_module.getCalibrationStage()
+ *         return self.c_module.getCalibrationStage()
  * 
  */
 
@@ -2984,37 +3038,47 @@ static PyObject *__pyx_pw_19pyiArduinoI2Cbumper_19pyiArduinoI2Cbumper_19pyiArdui
 static PyObject *__pyx_pf_19pyiArduinoI2Cbumper_19pyiArduinoI2Cbumper_19pyiArduinoI2Cbumper_32getCalibrationStage(struct __pyx_obj_19pyiArduinoI2Cbumper_19pyiArduinoI2Cbumper_pyiArduinoI2Cbumper *__pyx_v_self) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
+  PyObject *__pyx_t_1 = NULL;
   __Pyx_RefNannySetupContext("getCalibrationStage", 0);
 
   /* "pyiArduinoI2Cbumper/pyiArduinoI2Cbumper.pyx":173
  * 
  *     def getCalibrationStage(self):
- *         self.c_module.getCalibrationStage()             # <<<<<<<<<<<<<<
+ *         return self.c_module.getCalibrationStage()             # <<<<<<<<<<<<<<
  * 
  *     def getLineDigital(self, num):
  */
-  (void)(__pyx_v_self->c_module.getCalibrationStage());
+  __Pyx_XDECREF(__pyx_r);
+  __pyx_t_1 = __Pyx_PyInt_From_unsigned_char(__pyx_v_self->c_module.getCalibrationStage()); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 173, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_1);
+  __pyx_r = __pyx_t_1;
+  __pyx_t_1 = 0;
+  goto __pyx_L0;
 
   /* "pyiArduinoI2Cbumper/pyiArduinoI2Cbumper.pyx":172
- *         self.c_module.setCalibrationManualOverloaded(i)
+ *         return self.c_module.setCalibrationManualOverloaded(i)
  * 
  *     def getCalibrationStage(self):             # <<<<<<<<<<<<<<
- *         self.c_module.getCalibrationStage()
+ *         return self.c_module.getCalibrationStage()
  * 
  */
 
   /* function exit code */
-  __pyx_r = Py_None; __Pyx_INCREF(Py_None);
+  __pyx_L1_error:;
+  __Pyx_XDECREF(__pyx_t_1);
+  __Pyx_AddTraceback("pyiArduinoI2Cbumper.pyiArduinoI2Cbumper.pyiArduinoI2Cbumper.getCalibrationStage", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __pyx_r = NULL;
+  __pyx_L0:;
   __Pyx_XGIVEREF(__pyx_r);
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
 /* "pyiArduinoI2Cbumper/pyiArduinoI2Cbumper.pyx":175
- *         self.c_module.getCalibrationStage()
+ *         return self.c_module.getCalibrationStage()
  * 
  *     def getLineDigital(self, num):             # <<<<<<<<<<<<<<
- *         self.c_module.getLineDigital(num)
+ *         return self.c_module.getLineDigital(num)
  * 
  */
 
@@ -3035,30 +3099,35 @@ static PyObject *__pyx_pf_19pyiArduinoI2Cbumper_19pyiArduinoI2Cbumper_19pyiArdui
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   unsigned char __pyx_t_1;
+  PyObject *__pyx_t_2 = NULL;
   __Pyx_RefNannySetupContext("getLineDigital", 0);
 
   /* "pyiArduinoI2Cbumper/pyiArduinoI2Cbumper.pyx":176
  * 
  *     def getLineDigital(self, num):
- *         self.c_module.getLineDigital(num)             # <<<<<<<<<<<<<<
+ *         return self.c_module.getLineDigital(num)             # <<<<<<<<<<<<<<
  * 
  *     def getLineAnalog(self, num):
  */
+  __Pyx_XDECREF(__pyx_r);
   __pyx_t_1 = __Pyx_PyInt_As_unsigned_char(__pyx_v_num); if (unlikely((__pyx_t_1 == (unsigned char)-1) && PyErr_Occurred())) __PYX_ERR(0, 176, __pyx_L1_error)
-  (void)(__pyx_v_self->c_module.getLineDigital(__pyx_t_1));
+  __pyx_t_2 = __Pyx_PyInt_From_unsigned_short(__pyx_v_self->c_module.getLineDigital(__pyx_t_1)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 176, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_2);
+  __pyx_r = __pyx_t_2;
+  __pyx_t_2 = 0;
+  goto __pyx_L0;
 
   /* "pyiArduinoI2Cbumper/pyiArduinoI2Cbumper.pyx":175
- *         self.c_module.getCalibrationStage()
+ *         return self.c_module.getCalibrationStage()
  * 
  *     def getLineDigital(self, num):             # <<<<<<<<<<<<<<
- *         self.c_module.getLineDigital(num)
+ *         return self.c_module.getLineDigital(num)
  * 
  */
 
   /* function exit code */
-  __pyx_r = Py_None; __Pyx_INCREF(Py_None);
-  goto __pyx_L0;
   __pyx_L1_error:;
+  __Pyx_XDECREF(__pyx_t_2);
   __Pyx_AddTraceback("pyiArduinoI2Cbumper.pyiArduinoI2Cbumper.pyiArduinoI2Cbumper.getLineDigital", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __pyx_L0:;
@@ -3068,10 +3137,10 @@ static PyObject *__pyx_pf_19pyiArduinoI2Cbumper_19pyiArduinoI2Cbumper_19pyiArdui
 }
 
 /* "pyiArduinoI2Cbumper/pyiArduinoI2Cbumper.pyx":178
- *         self.c_module.getLineDigital(num)
+ *         return self.c_module.getLineDigital(num)
  * 
  *     def getLineAnalog(self, num):             # <<<<<<<<<<<<<<
- *         self.c_module.getLineAnalog(num)
+ *         return self.c_module.getLineAnalog(num)
  * 
  */
 
@@ -3092,30 +3161,35 @@ static PyObject *__pyx_pf_19pyiArduinoI2Cbumper_19pyiArduinoI2Cbumper_19pyiArdui
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   unsigned char __pyx_t_1;
+  PyObject *__pyx_t_2 = NULL;
   __Pyx_RefNannySetupContext("getLineAnalog", 0);
 
   /* "pyiArduinoI2Cbumper/pyiArduinoI2Cbumper.pyx":179
  * 
  *     def getLineAnalog(self, num):
- *         self.c_module.getLineAnalog(num)             # <<<<<<<<<<<<<<
+ *         return self.c_module.getLineAnalog(num)             # <<<<<<<<<<<<<<
  * 
  *     def getErrPID(self):
  */
+  __Pyx_XDECREF(__pyx_r);
   __pyx_t_1 = __Pyx_PyInt_As_unsigned_char(__pyx_v_num); if (unlikely((__pyx_t_1 == (unsigned char)-1) && PyErr_Occurred())) __PYX_ERR(0, 179, __pyx_L1_error)
-  (void)(__pyx_v_self->c_module.getLineAnalog(__pyx_t_1));
+  __pyx_t_2 = __Pyx_PyInt_From_unsigned_short(__pyx_v_self->c_module.getLineAnalog(__pyx_t_1)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 179, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_2);
+  __pyx_r = __pyx_t_2;
+  __pyx_t_2 = 0;
+  goto __pyx_L0;
 
   /* "pyiArduinoI2Cbumper/pyiArduinoI2Cbumper.pyx":178
- *         self.c_module.getLineDigital(num)
+ *         return self.c_module.getLineDigital(num)
  * 
  *     def getLineAnalog(self, num):             # <<<<<<<<<<<<<<
- *         self.c_module.getLineAnalog(num)
+ *         return self.c_module.getLineAnalog(num)
  * 
  */
 
   /* function exit code */
-  __pyx_r = Py_None; __Pyx_INCREF(Py_None);
-  goto __pyx_L0;
   __pyx_L1_error:;
+  __Pyx_XDECREF(__pyx_t_2);
   __Pyx_AddTraceback("pyiArduinoI2Cbumper.pyiArduinoI2Cbumper.pyiArduinoI2Cbumper.getLineAnalog", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __pyx_L0:;
@@ -3125,10 +3199,10 @@ static PyObject *__pyx_pf_19pyiArduinoI2Cbumper_19pyiArduinoI2Cbumper_19pyiArdui
 }
 
 /* "pyiArduinoI2Cbumper/pyiArduinoI2Cbumper.pyx":181
- *         self.c_module.getLineAnalog(num)
+ *         return self.c_module.getLineAnalog(num)
  * 
  *     def getErrPID(self):             # <<<<<<<<<<<<<<
- *         self.c_module.getErrPID()
+ *         return self.c_module.getErrPID()
  * 
  */
 
@@ -3148,37 +3222,47 @@ static PyObject *__pyx_pw_19pyiArduinoI2Cbumper_19pyiArduinoI2Cbumper_19pyiArdui
 static PyObject *__pyx_pf_19pyiArduinoI2Cbumper_19pyiArduinoI2Cbumper_19pyiArduinoI2Cbumper_38getErrPID(struct __pyx_obj_19pyiArduinoI2Cbumper_19pyiArduinoI2Cbumper_pyiArduinoI2Cbumper *__pyx_v_self) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
+  PyObject *__pyx_t_1 = NULL;
   __Pyx_RefNannySetupContext("getErrPID", 0);
 
   /* "pyiArduinoI2Cbumper/pyiArduinoI2Cbumper.pyx":182
  * 
  *     def getErrPID(self):
- *         self.c_module.getErrPID()             # <<<<<<<<<<<<<<
+ *         return self.c_module.getErrPID()             # <<<<<<<<<<<<<<
  * 
  *     def getLineSum(self):
  */
-  (void)(__pyx_v_self->c_module.getErrPID());
+  __Pyx_XDECREF(__pyx_r);
+  __pyx_t_1 = PyFloat_FromDouble(__pyx_v_self->c_module.getErrPID()); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 182, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_1);
+  __pyx_r = __pyx_t_1;
+  __pyx_t_1 = 0;
+  goto __pyx_L0;
 
   /* "pyiArduinoI2Cbumper/pyiArduinoI2Cbumper.pyx":181
- *         self.c_module.getLineAnalog(num)
+ *         return self.c_module.getLineAnalog(num)
  * 
  *     def getErrPID(self):             # <<<<<<<<<<<<<<
- *         self.c_module.getErrPID()
+ *         return self.c_module.getErrPID()
  * 
  */
 
   /* function exit code */
-  __pyx_r = Py_None; __Pyx_INCREF(Py_None);
+  __pyx_L1_error:;
+  __Pyx_XDECREF(__pyx_t_1);
+  __Pyx_AddTraceback("pyiArduinoI2Cbumper.pyiArduinoI2Cbumper.pyiArduinoI2Cbumper.getErrPID", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __pyx_r = NULL;
+  __pyx_L0:;
   __Pyx_XGIVEREF(__pyx_r);
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
 /* "pyiArduinoI2Cbumper/pyiArduinoI2Cbumper.pyx":184
- *         self.c_module.getErrPID()
+ *         return self.c_module.getErrPID()
  * 
  *     def getLineSum(self):             # <<<<<<<<<<<<<<
- *         self.c_module.getLineSum()
+ *         return self.c_module.getLineSum()
  * 
  */
 
@@ -3198,37 +3282,47 @@ static PyObject *__pyx_pw_19pyiArduinoI2Cbumper_19pyiArduinoI2Cbumper_19pyiArdui
 static PyObject *__pyx_pf_19pyiArduinoI2Cbumper_19pyiArduinoI2Cbumper_19pyiArduinoI2Cbumper_40getLineSum(struct __pyx_obj_19pyiArduinoI2Cbumper_19pyiArduinoI2Cbumper_pyiArduinoI2Cbumper *__pyx_v_self) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
+  PyObject *__pyx_t_1 = NULL;
   __Pyx_RefNannySetupContext("getLineSum", 0);
 
   /* "pyiArduinoI2Cbumper/pyiArduinoI2Cbumper.pyx":185
  * 
  *     def getLineSum(self):
- *         self.c_module.getLineSum()             # <<<<<<<<<<<<<<
+ *         return self.c_module.getLineSum()             # <<<<<<<<<<<<<<
  * 
  *     def getLineType(self):
  */
-  (void)(__pyx_v_self->c_module.getLineSum());
+  __Pyx_XDECREF(__pyx_r);
+  __pyx_t_1 = __Pyx_PyInt_From_unsigned_char(__pyx_v_self->c_module.getLineSum()); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 185, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_1);
+  __pyx_r = __pyx_t_1;
+  __pyx_t_1 = 0;
+  goto __pyx_L0;
 
   /* "pyiArduinoI2Cbumper/pyiArduinoI2Cbumper.pyx":184
- *         self.c_module.getErrPID()
+ *         return self.c_module.getErrPID()
  * 
  *     def getLineSum(self):             # <<<<<<<<<<<<<<
- *         self.c_module.getLineSum()
+ *         return self.c_module.getLineSum()
  * 
  */
 
   /* function exit code */
-  __pyx_r = Py_None; __Pyx_INCREF(Py_None);
+  __pyx_L1_error:;
+  __Pyx_XDECREF(__pyx_t_1);
+  __Pyx_AddTraceback("pyiArduinoI2Cbumper.pyiArduinoI2Cbumper.pyiArduinoI2Cbumper.getLineSum", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __pyx_r = NULL;
+  __pyx_L0:;
   __Pyx_XGIVEREF(__pyx_r);
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
 /* "pyiArduinoI2Cbumper/pyiArduinoI2Cbumper.pyx":187
- *         self.c_module.getLineSum()
+ *         return self.c_module.getLineSum()
  * 
  *     def getLineType(self):             # <<<<<<<<<<<<<<
- *         self.c_module.getLineType()
+ *         return self.c_module.getLineType()
  * 
  */
 
@@ -3248,37 +3342,47 @@ static PyObject *__pyx_pw_19pyiArduinoI2Cbumper_19pyiArduinoI2Cbumper_19pyiArdui
 static PyObject *__pyx_pf_19pyiArduinoI2Cbumper_19pyiArduinoI2Cbumper_19pyiArduinoI2Cbumper_42getLineType(struct __pyx_obj_19pyiArduinoI2Cbumper_19pyiArduinoI2Cbumper_pyiArduinoI2Cbumper *__pyx_v_self) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
+  PyObject *__pyx_t_1 = NULL;
   __Pyx_RefNannySetupContext("getLineType", 0);
 
   /* "pyiArduinoI2Cbumper/pyiArduinoI2Cbumper.pyx":188
  * 
  *     def getLineType(self):
- *         self.c_module.getLineType()             # <<<<<<<<<<<<<<
+ *         return self.c_module.getLineType()             # <<<<<<<<<<<<<<
  * 
  *     def setLineType(self, line_type):
  */
-  (void)(__pyx_v_self->c_module.getLineType());
+  __Pyx_XDECREF(__pyx_r);
+  __pyx_t_1 = __Pyx_PyInt_From_unsigned_char(__pyx_v_self->c_module.getLineType()); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 188, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_1);
+  __pyx_r = __pyx_t_1;
+  __pyx_t_1 = 0;
+  goto __pyx_L0;
 
   /* "pyiArduinoI2Cbumper/pyiArduinoI2Cbumper.pyx":187
- *         self.c_module.getLineSum()
+ *         return self.c_module.getLineSum()
  * 
  *     def getLineType(self):             # <<<<<<<<<<<<<<
- *         self.c_module.getLineType()
+ *         return self.c_module.getLineType()
  * 
  */
 
   /* function exit code */
-  __pyx_r = Py_None; __Pyx_INCREF(Py_None);
+  __pyx_L1_error:;
+  __Pyx_XDECREF(__pyx_t_1);
+  __Pyx_AddTraceback("pyiArduinoI2Cbumper.pyiArduinoI2Cbumper.pyiArduinoI2Cbumper.getLineType", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __pyx_r = NULL;
+  __pyx_L0:;
   __Pyx_XGIVEREF(__pyx_r);
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
 /* "pyiArduinoI2Cbumper/pyiArduinoI2Cbumper.pyx":190
- *         self.c_module.getLineType()
+ *         return self.c_module.getLineType()
  * 
  *     def setLineType(self, line_type):             # <<<<<<<<<<<<<<
- *         self.c_module.setLineType(line_type)
+ *         return self.c_module.setLineType(line_type)
  */
 
 /* Python wrapper */
@@ -3298,27 +3402,32 @@ static PyObject *__pyx_pf_19pyiArduinoI2Cbumper_19pyiArduinoI2Cbumper_19pyiArdui
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   unsigned char __pyx_t_1;
+  PyObject *__pyx_t_2 = NULL;
   __Pyx_RefNannySetupContext("setLineType", 0);
 
   /* "pyiArduinoI2Cbumper/pyiArduinoI2Cbumper.pyx":191
  * 
  *     def setLineType(self, line_type):
- *         self.c_module.setLineType(line_type)             # <<<<<<<<<<<<<<
+ *         return self.c_module.setLineType(line_type)             # <<<<<<<<<<<<<<
  */
+  __Pyx_XDECREF(__pyx_r);
   __pyx_t_1 = __Pyx_PyInt_As_unsigned_char(__pyx_v_line_type); if (unlikely((__pyx_t_1 == (unsigned char)-1) && PyErr_Occurred())) __PYX_ERR(0, 191, __pyx_L1_error)
-  (void)(__pyx_v_self->c_module.setLineType(__pyx_t_1));
+  __pyx_t_2 = __Pyx_PyBool_FromLong(__pyx_v_self->c_module.setLineType(__pyx_t_1)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 191, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_2);
+  __pyx_r = __pyx_t_2;
+  __pyx_t_2 = 0;
+  goto __pyx_L0;
 
   /* "pyiArduinoI2Cbumper/pyiArduinoI2Cbumper.pyx":190
- *         self.c_module.getLineType()
+ *         return self.c_module.getLineType()
  * 
  *     def setLineType(self, line_type):             # <<<<<<<<<<<<<<
- *         self.c_module.setLineType(line_type)
+ *         return self.c_module.setLineType(line_type)
  */
 
   /* function exit code */
-  __pyx_r = Py_None; __Pyx_INCREF(Py_None);
-  goto __pyx_L0;
   __pyx_L1_error:;
+  __Pyx_XDECREF(__pyx_t_2);
   __Pyx_AddTraceback("pyiArduinoI2Cbumper.pyiArduinoI2Cbumper.pyiArduinoI2Cbumper.setLineType", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __pyx_L0:;
@@ -5523,6 +5632,37 @@ static CYTHON_INLINE PyObject* __Pyx_PyInt_From_unsigned_char(unsigned char valu
         int one = 1; int little = (int)*(unsigned char *)&one;
         unsigned char *bytes = (unsigned char *)&value;
         return _PyLong_FromByteArray(bytes, sizeof(unsigned char),
+                                     little, !is_unsigned);
+    }
+}
+
+/* CIntToPy */
+static CYTHON_INLINE PyObject* __Pyx_PyInt_From_unsigned_short(unsigned short value) {
+    const unsigned short neg_one = (unsigned short) ((unsigned short) 0 - (unsigned short) 1), const_zero = (unsigned short) 0;
+    const int is_unsigned = neg_one > const_zero;
+    if (is_unsigned) {
+        if (sizeof(unsigned short) < sizeof(long)) {
+            return PyInt_FromLong((long) value);
+        } else if (sizeof(unsigned short) <= sizeof(unsigned long)) {
+            return PyLong_FromUnsignedLong((unsigned long) value);
+#ifdef HAVE_LONG_LONG
+        } else if (sizeof(unsigned short) <= sizeof(unsigned PY_LONG_LONG)) {
+            return PyLong_FromUnsignedLongLong((unsigned PY_LONG_LONG) value);
+#endif
+        }
+    } else {
+        if (sizeof(unsigned short) <= sizeof(long)) {
+            return PyInt_FromLong((long) value);
+#ifdef HAVE_LONG_LONG
+        } else if (sizeof(unsigned short) <= sizeof(PY_LONG_LONG)) {
+            return PyLong_FromLongLong((PY_LONG_LONG) value);
+#endif
+        }
+    }
+    {
+        int one = 1; int little = (int)*(unsigned char *)&one;
+        unsigned char *bytes = (unsigned char *)&value;
+        return _PyLong_FromByteArray(bytes, sizeof(unsigned short),
                                      little, !is_unsigned);
     }
 }

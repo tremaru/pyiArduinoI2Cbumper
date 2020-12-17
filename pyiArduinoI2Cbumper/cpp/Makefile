@@ -1,5 +1,4 @@
-all: FindDevices NewAddress
-
+all: FindDevices NewAddress changeLineTypeAuto changeLineType controlCalibrationButton getLineAnalog getLineDigital getLineDigitalFast setCalibrationAuto setCalibrationManual setTurnSignalAuto setTurnSignal
 FindDevices					:FindDevices.cpp ../iarduino_I2C_Bumper.cpp
 NewAddress					:NewAddress.cpp ../iarduino_I2C_Bumper.cpp
 changeLineTypeAuto			:changeLineTypeAuto.cpp ../iarduino_I2C_Bumper.cpp
