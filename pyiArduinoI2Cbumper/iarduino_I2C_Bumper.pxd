@@ -25,5 +25,6 @@ cdef extern from "iarduino_I2C_Bumper.h":
         unsigned short getLineAnalog(unsigned char)
         float getErrPID()
         unsigned char getLineSum()
+        unsigned char getLineSumOverloaded "getLineSum"(unsigned short)
         unsigned char getLineType()
         bint setLineType(unsigned char)

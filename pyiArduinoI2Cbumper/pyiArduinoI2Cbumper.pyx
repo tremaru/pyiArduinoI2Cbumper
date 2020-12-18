@@ -148,9 +148,13 @@ cdef class pyiArduinoI2Cbumper:
         return self.c_module.setTurnPeriod(period)
 
     def settingsTurnAuto(self, start, stop, flag=None):
+
         if flag is not None:
+
             return self.c_module.settingsTurnAuto(start, stop, flag)
+
         else:
+
             return self.c_module.settingsTurnAuto(start, stop, False)
 
     def setCalibrationRun(self):
@@ -162,11 +166,23 @@ cdef class pyiArduinoI2Cbumper:
         else:
             return self.c_module.setCalibrationEnd(False)
 
-    def setCalibrationManual(self, adc_1, adc_2, adc_3, adc_4, adc_5, adc_6, adc_7, adc_8, adc_9):
-        return self.c_module.setCalibrationManual(adc_1, adc_2, adc_3, adc_4, adc_5, adc_6, adc_7, adc_8, adc_9)
+    def setCalibrationManual(
+                                self,
+                                adc_1 = None, adc_2 = None, adc_3 = None,
+                                adc_4 = None, adc_5 = None, adc_6 = None,
+                                adc_7 = None, adc_8 = None, adc_9 = None
+                                                    ):
+        if adc_2 is not None:
 
-    def setCalibrationManualOverloaded(self, i):
-        return self.c_module.setCalibrationManualOverloaded(i)
+            return self.c_module.setCalibrationManual(
+                                                        adc_1, adc_2, adc_3,
+                                                        adc_4, adc_5, adc_6,
+                                                        adc_7, adc_8, adc_9
+                                                                            )
+
+        else:
+
+            return self.c_module.setCalibrationManualOverloaded(adc_1)
 
     def getCalibrationStage(self):
         return self.c_module.getCalibrationStage()
@@ -180,8 +196,27 @@ cdef class pyiArduinoI2Cbumper:
     def getErrPID(self):
         return self.c_module.getErrPID()
 
-    def getLineSum(self):
-        return self.c_module.getLineSum()
+    # getting number of activated sensors
+    # and activated sensor bits, passed by ref in c++
+    cpdef getLineSum(self, a=None):
+
+        # var to be passed (have to be c-defed)
+        cdef unsigned short activeSensorBits = 0
+
+        # python's crappy way of overloading.
+        # (Yes, I know about "overloading" module
+        # it is not installed by default and I
+        # don't want people to install more stuff...
+        # sed 11q 😱😱😱)
+        if a is not None:
+
+            nSens = self.c_module.getLineSumOverloaded(activeSensorBits)
+
+            return nSens, activeSensorBits
+
+        else:
+
+            return self.c_module.getLineSum()
 
     def getLineType(self):
         return self.c_module.getLineType()
