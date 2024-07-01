@@ -1,3 +1,8 @@
+from libcpp.string cimport string
+
+cdef extern from "iarduino_I2C_PI.cpp":
+    pass
+
 cdef extern from "iarduino_I2C_Bumper.cpp":
     pass
 
@@ -28,3 +33,7 @@ cdef extern from "iarduino_I2C_Bumper.h":
         unsigned char getLineSumOverloaded "getLineSum"(unsigned short)
         unsigned char getLineType()
         bint setLineType(unsigned char)
+        void changeBus(string)
+        unsigned short getCalibrationManual(unsigned char)
+        float getSidePID(char)
+        bint getCross(unsigned char, unsigned int)

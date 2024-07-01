@@ -82,11 +82,15 @@ NO_BEGIN = 1
 cdef class pyiArduinoI2Cbumper:
     cdef iarduino_I2C_Bumper c_module
 
-    def __cinit__(self, address=None, auto=None):
+    def __cinit__(self, address=None, auto=None, bus=None):
+
 
         if address is not None:
 
             self.c_module = iarduino_I2C_Bumper(address)
+
+            if bus is not None:
+                self.changeBus(bus)
 
             if auto is None:
                 #sleep(.5)
@@ -102,6 +106,9 @@ cdef class pyiArduinoI2Cbumper:
         else:
 
             self.c_module = iarduino_I2C_Bumper()
+
+            if bus is not None:
+                self.changeBus(bus)
 
             if auto is None:
                 #sleep(.5)
@@ -223,3 +230,15 @@ cdef class pyiArduinoI2Cbumper:
 
     def setLineType(self, line_type):
         return self.c_module.setLineType(line_type)
+
+    def changeBus(self, bus):
+        return self.c_module.changeBus(bytes(bus, 'utf-8'))
+
+    def getCalibrationManual(self, num):
+        return self.c_module.getCalibrationManual(num)
+
+    def getSidePID(self, dir):
+        return self.c_module.getSidePID(dir)
+
+    def getCross(self, width, time):
+        return self.c_module.getCross(width, time)
